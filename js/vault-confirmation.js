@@ -16,7 +16,7 @@ const order = orders.find(o => o.id === orderId) || orders[0];
 const page = document.getElementById('pageContent');
 
 if (!order) {
-  page.innerHTML = `<p style="color:var(--muted);text-align:center;padding:4rem 0;font-size:0.82rem;letter-spacing:0.1em;">No se encontró la orden. <a href="vault-store.html" style="color:var(--gold)">Volver a la tienda</a></p>`;
+  page.innerHTML = `<p style="color:var(--muted);text-align:center;padding:4rem 0;font-size:0.82rem;letter-spacing:0.1em;">No se encontró la orden. <a href="index.html" style="color:var(--gold)">Volver a la tienda</a></p>`;
 } else {
   const { total } = calculateTotals(order.items);
 
@@ -128,7 +128,7 @@ if (!order) {
 
     <div class="actions">
       <a href="vault-orders.html" class="btn-secondary">Ver mis pedidos</a>
-      <a href="vault-store.html" class="btn-primary">Seguir comprando</a>
+      <a href="index.html" class="btn-primary">Seguir comprando</a>
     </div>
   `;
 }

@@ -1,5 +1,5 @@
 /* =========================================================================
-   VAULT — Tienda (vault-store.html)
+   VAULT — Tienda (index.html)
    Requiere vault-common.js cargado antes que este archivo.
    ========================================================================= */
 

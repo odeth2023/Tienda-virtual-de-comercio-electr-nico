@@ -15,7 +15,7 @@ if (!cart.length) {
         <path d="M16 10a4 4 0 0 1-8 0"/>
       </svg>
       <p>Tu carrito está vacío.</p>
-      <a href="vault-store.html" class="go-shop">Ir a la tienda</a>
+      <a href="index.html" class="go-shop">Ir a la tienda</a>
     </div>`;
 } else {
   renderCheckout();
