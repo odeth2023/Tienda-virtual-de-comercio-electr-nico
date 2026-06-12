@@ -291,6 +291,7 @@ nav a:hover {
 }
 .filter-tabs {
   display: flex;
+  flex-wrap: wrap;
   gap: 0.25rem;
 }
 .filter-tab {
