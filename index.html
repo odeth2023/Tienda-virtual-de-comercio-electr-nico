@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VAULT — Tienda</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <div class="header-left">
+      <a href="vault-store.html" class="logo">V<span>A</span>ULT</a>
+      <nav>
+        <a href="#">Colección</a>
+        <a href="#">Destacados</a>
+        <a href="vault-orders.html" class="nav-orders" style="font-size:0.78rem;font-weight:500;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);text-decoration:none;transition:color var(--transition);">Mis Pedidos</a>
+      </nav>
+    </div>
+    <div class="header-right">
+      <div class="search-bar">
+        <input type="text" id="searchInput" placeholder="Buscar productos…" />
+        <button aria-label="Buscar">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/></svg>
+        </button>
+      </div>
+      <button class="cart-btn" id="openCart" aria-label="Abrir carrito">
+        <div class="cart-icon-wrap">
+          <span class="cart-count hidden" id="cartCount">0</span>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 0 1-8 0"/>
+          </svg>
+        </div>
+        <span class="cart-label">Carrito</span>
+      </button>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Objetos<br /><em>curados.</em></h1>
+      <p class="hero-sub">Selección global · Entrega rápida · Calidad garantizada</p>
+    </div>
+    <div class="hero-meta">
+      <p>Productos disponibles</p>
+      <strong id="productCountHero">—</strong>
+    </div>
+  </section>
+
+  <div class="filter-bar">
+    <div class="filter-tabs" id="filterTabs">
+      <button class="filter-tab active" data-cat="all">Todos</button>
+    </div>
+    <select class="sort-select" id="sortSelect">
+      <option value="default">Ordenar</option>
+      <option value="price-asc">Precio: menor a mayor</option>
+      <option value="price-desc">Precio: mayor a menor</option>
+      <option value="rating">Mejor valorados</option>
+    </select>
+  </div>
+
+  <main class="layout">
+    <section class="products-section">
+      <p class="products-count" id="productsCount">Cargando productos…</p>
+      <div class="products-grid" id="productsGrid">
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+        <div class="skeleton"><div class="skeleton-img"></div><div class="skeleton-line"></div><div class="skeleton-line short"></div></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="footer-logo">V<span>A</span>ULT</div>
+    <p>© 2025 VAULT Store · Proyecto de portafolio</p>
+  </footer>
+
+  <div class="cart-overlay" id="cartOverlay"></div>
+  <aside class="cart-panel" id="cartPanel" aria-label="Carrito de compras">
+    <div class="cart-header">
+      <div>
+        <h2>Carrito</h2>
+        <span id="cartItemsLabel">0 artículos</span>
+      </div>
+      <button class="close-cart" id="closeCart" aria-label="Cerrar carrito">×</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <div class="cart-empty" id="cartEmpty">
+        <svg width="44" height="44" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/>
+          <line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        <p>Tu carrito está vacío</p>
+      </div>
+    </div>
+    <div class="cart-footer">
+      <div class="cart-subtotal">
+        <span>Subtotal</span>
+        <strong id="cartTotal">$0.00</strong>
+      </div>
+      <p class="cart-note">Envío e impuestos calculados al finalizar</p>
+      <button class="checkout-btn" id="checkoutBtn" disabled>Finalizar compra</button>
+    </div>
+  </aside>
+
+  <div class="modal-overlay" id="modalOverlay">
+    <div class="modal" id="modal">
+      <button class="modal-close" id="modalClose">×</button>
+      <div class="modal-img-wrap"><img id="modalImg" src="" alt="" /></div>
+      <div class="modal-body">
+        <span class="modal-category" id="modalCategory"></span>
+        <h2 class="modal-title" id="modalTitle"></h2>
+        <div class="modal-rating" id="modalRating"></div>
+        <p class="modal-desc" id="modalDesc"></p>
+        <span class="modal-price" id="modalPrice"></span>
+        <button class="modal-add-btn" id="modalAddBtn">Agregar al carrito</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+
+  <script src="js/vault-common.js"></script>
+  <script src="js/vault-store.js"></script>
+</body>
+</html>

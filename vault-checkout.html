@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VAULT — Checkout</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="vault-store.html" class="logo">V<span>A</span>ULT</a>
+    <div class="header-steps">
+      <span class="step-pill done">
+        <svg width="10" height="10" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"/></svg>
+        Carrito
+      </span>
+      <span class="step-sep">›</span>
+      <span class="step-pill active">Pago</span>
+      <span class="step-sep">›</span>
+      <span class="step-pill">Confirmación</span>
+    </div>
+    <a href="vault-store.html" class="back-link">
+      <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Volver
+    </a>
+  </header>
+
+  <div id="checkoutContent"></div>
+
+  <!-- Processing overlay -->
+  <div class="processing-overlay" id="processingOverlay">
+    <div class="processing-ring" id="procRing"></div>
+    <div>
+      <div class="processing-text" id="procTitle">Procesando pago</div>
+      <div class="processing-sub" id="procSub">No cierres esta ventana</div>
+    </div>
+    <div class="processing-steps" id="procSteps">
+      <div class="proc-step" id="ps1"><div class="dot"></div>Verificando datos</div>
+      <div class="proc-step" id="ps2"><div class="dot"></div>Conectando con el banco</div>
+      <div class="proc-step" id="ps3"><div class="dot"></div>Autorizando cargo</div>
+      <div class="proc-step" id="ps4"><div class="dot"></div>Confirmando orden</div>
+    </div>
+  </div>
+
+  <script src="js/vault-common.js"></script>
+  <script src="js/vault-checkout.js"></script>
+</body>
+</html>

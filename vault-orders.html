@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>VAULT — Mis Pedidos</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header>
+    <a href="index.html" class="logo">V<span>A</span>ULT</a>
+    <nav class="header-nav">
+      <a href="index.html">Tienda</a>
+      <a href="vault-orders.html" class="active">Mis Pedidos</a>
+    </nav>
+  </header>
+
+  <div class="page">
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Mis <em>pedidos</em></h1>
+        <p class="orders-count" id="ordersCount">—</p>
+      </div>
+    </div>
+
+    <!-- Demo banner -->
+    <div class="demo-banner" id="demoBanner">
+      <span><strong>Demo:</strong> Cambia el estado de un pedido para ver el seguimiento en acción</span>
+      <div class="demo-controls" id="demoControls"></div>
+    </div>
+
+    <!-- Status filter -->
+    <div class="status-filter" id="statusFilter">
+      <button class="status-tab active" data-filter="all">Todos</button>
+      <button class="status-tab" data-filter="created">Creados</button>
+      <button class="status-tab" data-filter="shipped">En camino</button>
+      <button class="status-tab" data-filter="delivered">Entregados</button>
+    </div>
+
+    <div id="ordersContainer"></div>
+  </div>
+
+  <script src="js/vault-common.js"></script>
+  <script src="js/vault-orders.js"></script>
+</body>
+</html>
